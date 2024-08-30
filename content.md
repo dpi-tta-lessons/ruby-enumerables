@@ -239,7 +239,7 @@ Now that you know the differences between `do...end` and `{}`, and how to use th
 
 - **`do...end`**: Best for multi-line blocks where you want to perform several operations or enhance readability.
 - **`{}`**: Ideal for single-line blocks or when you want to embed the block in a larger expression.
-- **`&` Shorthand**: Perfect for calling simple methods on each element of a collection in a concise way.
+- **`&`**: Perfect for calling simple methods on each element of a collection in a concise way.
 
 ## Conclusion
 Enumerables are a powerful set of tools in Ruby that allow us to work with collections more effectively. With methods like `map`, `select`, `reject`, `find`, and `find_all`, we can write more concise and readable code to manipulate and search collections.
