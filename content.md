@@ -181,6 +181,66 @@ end
 ```
 {: .repl-test #find_find_all_practice_test_1 for="find_find_all_practice" title="Find and Find_all practice should print '2' and '[1, 3, 5]' if the input is [1, 3, 5, 2, 4]" points="1"}
 
+## `do...end` vs `{}` vs `&` Block Syntax in Ruby Enumerables
+In Ruby, there are three common syntaxes for writing blocks of code: `do...end`, `{}`, and `&`. These syntaxes are used to define blocks, but there are subtle differences in how and when to use each.
+
+### `do...end` Block Syntax
+The do...end syntax is often used for multi-line blocks. It is more readable for longer blocks of code and is commonly used when the block performs a series of operations.
+
+```ruby
+numbers = [1, 2, 3, 4, 5]
+
+numbers.each do |number|
+  pp number * number
+  pp number + 1
+end
+```
+{: .repl #do_end_example title="do...end block" points="1"}
+
+### `{}` Block Syntax
+The `{}` syntax is typically used for single-line blocks. It is more concise and is often used when the block contains only one line of code or when a method call is embedded within another expression.
+
+```ruby
+numbers = [1, 2, 3, 4, 5]
+
+squares = numbers.map { |number| number * number }
+
+pp squares
+```
+{: .repl #curly_braces_example title="{} block" points="1"}
+
+### Using the `&` Shorthand with Enumerable Methods
+The `&` shorthand is a way to convert a symbol representing a method name into a block that calls that method on each element of the collection. This shorthand can be used with any method that takes a block, such as `map`, `select`, `reject`, and others.
+
+For example, consider the following code that uses `map` to convert an array of strings to uppercase:
+
+```ruby
+words = ["hello", "world", "ruby"]
+
+upcased_words = words.map { |word| word.upcase }
+
+pp upcased_words
+```
+{: .repl #map_upcase_example title="map with block" points="1"}
+
+This code can be made more concise using the `&` shorthand:
+
+```ruby
+words = ["hello", "world", "ruby"]
+
+upcased_words = words.map(&:upcase)
+
+pp upcased_words
+```
+{: .repl #map_upcase_shorthand title="map with & shorthand" points="1"}
+
+### Combining `do...end`, `{}`, and `&`
+Now that you know the differences between `do...end` and `{}`, and how to use the `&` shorthand, you have several tools to write more concise and readable Ruby code. The choice between these syntaxes depends on the context and your personal or team’s coding style.
+
+- **`do...end`**: Best for multi-line blocks where you want to perform several operations or enhance readability.
+- **`{}`**: Ideal for single-line blocks or when you want to embed the block in a larger expression.
+- **`&` Shorthand**: Perfect for calling simple methods on each element of a collection in a concise way.
+
 ## Conclusion
 Enumerables are a powerful set of tools in Ruby that allow us to work with collections more effectively. With methods like `map`, `select`, `reject`, `find`, and `find_all`, we can write more concise and readable code to manipulate and search collections.
 
