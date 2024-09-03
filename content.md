@@ -198,7 +198,7 @@ end
 {: .repl #do_end_example title="do...end block" points="1"}
 
 ### `{}` Block Syntax
-The `{}` syntax is typically used for single-line blocks. It is more concise and is often used when the block contains only one line of code or when a method call is embedded within another expression.
+The `{}` curly braces syntax is typically used for single-line blocks. It is more concise and is often used when the block contains only one line of code or when a method call is embedded within another expression.
 
 ```ruby
 numbers = [1, 2, 3, 4, 5]
@@ -207,7 +207,7 @@ squares = numbers.map { |number| number * number }
 
 pp squares
 ```
-{: .repl #curly_braces_example title="{} block" points="1"}
+{: .repl #curly_braces_example title="Curly braces block" points="1"}
 
 ### Using the `&` Shorthand with Enumerable Methods
 The `&` shorthand is a way to convert a symbol representing a method name into a block that calls that method on each element of the collection. This shorthand can be used with any method that takes a block, such as `map`, `select`, `reject`, and others.
