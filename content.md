@@ -100,6 +100,8 @@ For example, if `numbers = [1, 2, 3, 4, 5, 6]`, the output should be:
 [1, 3, 5]
 ```
 
+**Note:** The test requires you to print the _even_ number array _first_, and then the _odd_ number array _second_.
+
 ```ruby
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9].sample(6)
 # write your program here
