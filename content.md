@@ -47,7 +47,7 @@ words = ["ruby", "python", "java"].sample(2)
 ```ruby
 describe "Map practice" do
   it "should print 'APPLE', 'BANANA', 'CHERRY' if the input is ['apple', 'banana', 'cherry']" do
-    replace_read_only_input(variable_name: "words", new_value: ["apple", "banana", "cherry"])
+    replace_read_only_value(variable_name: "words", new_value: ["apple", "banana", "cherry"])
     output = run_codeblock
     expect(output).to match(["APPLE", "BANANA", "CHERRY"])    
   end
