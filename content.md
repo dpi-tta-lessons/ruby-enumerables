@@ -42,7 +42,7 @@ For example, if `words = ["apple", "banana", "cherry"]`, the output should be `[
 words = ["ruby", "python", "java"].sample(2)
 # write your program here
 ```
-{: .codeblock #map_practice title="map practice" readonly_lines="[1]" points="1"}
+{: .repl #map_practice title="map practice" readonly_lines="[1]" points="1"}
 
 ```ruby
 describe "Map practice" do
@@ -53,7 +53,7 @@ describe "Map practice" do
   end
 end
 ```
-{: .codeblock-test #map_practice_test_1 for="map_practice" title="Map practice should print 'APPLE', 'BANANA', 'CHERRY' if the input is ['apple', 'banana', 'cherry']" points="1"}
+{: .repl-test #map_practice_test_1 for="map_practice" title="Map practice should print 'APPLE', 'BANANA', 'CHERRY' if the input is ['apple', 'banana', 'cherry']" points="1"}
 
 ## `select` and `reject` methods
 Sometimes we want to filter elements in a collection based on certain criteria. This is where `select` (also known as `filter`) and `reject` come in handy.
@@ -106,14 +106,9 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9].sample(6)
 ```ruby
 describe "Select and Reject practice" do
   it "should print '[2, 4, 6]' and '[1, 3, 5]' if the input is [1, 2, 3, 4, 5, 6]" do
-    path = "/tmp/code.rb"
-
-    file = File.read(path)
-    new_content = file.split("\n")
-    new_content = new_content.map { |line| line == 'numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9].sample(6)' ? 'numbers = [1, 2, 3, 4, 5, 6]' : line }.join("\n")
-    File.open(path, 'w') { |line| line.puts new_content }
-
-    expect { require_relative(path) }.to output("[2, 4, 6]\n[1, 3, 5]\n").to_stdout
+    replace_read_only_value(variable_name: "numbers", new_value: [1, 2, 3, 4, 5, 6])
+    output = run_codeblock
+    expect(output).to fuzzy_match("[2, 4, 6]\n[1, 3, 5]\n")    
   end
 end
 ```
@@ -165,14 +160,9 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9].shuffle
 ```ruby
 describe "Find and Find_all practice" do
   it "should print '2' and '[1, 3, 5]' if the input is [1, 3, 5, 2, 4]" do
-    path = "/tmp/code.rb"
-
-    file = File.read(path)
-    new_content = file.split("\n")
-    new_content = new_content.map { |line| line == 'numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9].shuffle' ? 'numbers = [1, 3, 5, 2, 4]' : line }.join("\n")
-    File.open(path, 'w') { |line| line.puts new_content }
-
-    expect { require_relative(path) }.to output("2\n[1, 3, 5]\n").to_stdout
+    replace_read_only_value(variable_name: "numbers", new_value: [1, 3, 5, 2, 4])
+    output = run_codeblock
+    expect(output).to fuzzy_match("2\n[1, 3, 5]\n")  
   end
 end
 ```
