@@ -42,23 +42,18 @@ For example, if `words = ["apple", "banana", "cherry"]`, the output should be `[
 words = ["ruby", "python", "java"].sample(2)
 # write your program here
 ```
-{: .repl #map_practice title="map practice" readonly_lines="[1]" points="1"}
+{: .codeblock #map_practice title="map practice" readonly_lines="[1]" points="1"}
 
 ```ruby
 describe "Map practice" do
   it "should print 'APPLE', 'BANANA', 'CHERRY' if the input is ['apple', 'banana', 'cherry']" do
-    path = "/tmp/code.rb"
-
-    file = File.read(path)
-    new_content = file.split("\n")
-    new_content = new_content.map { |line| line == 'words = ["ruby", "python", "java"].sample(2)' ? 'words = ["apple", "banana", "cherry"]' : line }.join("\n")
-    File.open(path, 'w') { |line| line.puts new_content }
-
-    expect { require_relative(path) }.to output("[\"APPLE\", \"BANANA\", \"CHERRY\"]\n").to_stdout
+    replace_read_only_input(variable_name: "words", new_value: ["apple", "banana", "cherry"])
+    output = run_codeblock
+    expect(output).to match(["APPLE", "BANANA\", "CHERRY"])    
   end
 end
 ```
-{: .repl-test #map_practice_test_1 for="map_practice" title="Map practice should print 'APPLE', 'BANANA', 'CHERRY' if the input is ['apple', 'banana', 'cherry']" points="1"}
+{: .codeblock-test #map_practice_test_1 for="map_practice" title="Map practice should print 'APPLE', 'BANANA', 'CHERRY' if the input is ['apple', 'banana', 'cherry']" points="1"}
 
 ## `select` and `reject` methods
 Sometimes we want to filter elements in a collection based on certain criteria. This is where `select` (also known as `filter`) and `reject` come in handy.
