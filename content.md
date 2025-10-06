@@ -1,4 +1,4 @@
-# Enumerables
+# Ruby Enumerables
 
 Now that we understand how to use loops and the each method to iterate through arrays and other collections, let's dive into the powerful world of Enumerables. [Enumerables](https://ruby-doc.org/3.2.2/Enumerable.html) are a set of methods that allow us to traverse, search, sort, and manipulate collections in Ruby. They provide a more expressive and readable way to handle collections compared to basic loops and make code easier to understand and maintain.
 
