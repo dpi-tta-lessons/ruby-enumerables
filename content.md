@@ -160,6 +160,35 @@ Now that you know the differences between `do...end` and `{}`, and how to use th
 - **`{}`**: Ideal for single-line blocks or when you want to embed the block in a larger expression.
 - **`&`**: Perfect for calling simple methods on each element of a collection in a concise way.
 
+## Quiz
+
+- What does the `map` method do in Ruby?
+- It transforms each element of a collection and returns a new array.
+  - Correct! `map` creates a new array with transformed elements.
+- It modifies the original array in place.
+  - Not quite. `map!` would modify in place, but `map` creates a new array.
+- It filters elements based on a condition.
+  - That’s what `select` or `reject` does.
+{: .choose_best #map_function title="What does map do?" answer="1"}
+
+- Which statement correctly describes `select` and `reject`?
+- `select` returns elements that make the block true, while `reject` returns those that make it false.
+  - Correct! They are opposites.
+- `select` and `reject` both remove elements from the original array.
+  - Not correct. They return new arrays without changing the original.
+- `reject` returns only `nil` values from the collection.
+  - Not correct — it filters based on the block’s condition.
+{: .choose_best #select_reject title="Filtering Collections" answer="1"}
+
+- What does `find` return when used on an array?
+- The first element that satisfies the block’s condition.
+  - Correct! `find` stops after the first match.
+- All elements that satisfy the block’s condition.
+  - Not quite — that’s `find_all`.
+- A Boolean value.
+  - Nope, it returns an element, not true/false.
+{: .choose_best #find_method title="Using find" answer="1"}
+
 ## Conclusion
 
 Enumerables are a powerful set of tools in Ruby that allow us to work with collections more effectively. With methods like `map`, `select`, `reject`, `find`, and `find_all`, we can write more concise and readable code to manipulate and search collections.
